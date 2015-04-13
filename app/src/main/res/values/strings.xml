@@ -9,4 +9,5 @@
 
     <string name="scanButton">Start Scan</string>
     <string name="ScoreButton">Score</string>
+    <string name="battleButton">Battle</string>
 </resources>
