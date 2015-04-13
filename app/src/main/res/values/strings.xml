@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HogeschoolGame</string>
+
+    <string name="Titel">Title</string>
+    <string name="action_settings">Settings</string>
+
+
+
+
+    <string name="scanButton">Start Scan</string>
+    <string name="ScoreButton">Score</string>
+</resources>
