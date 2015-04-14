@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
             System.out.println(scanResult.toString());
         }
         String Result = scanResult.getContents();
-        
+
         if (Result.equals("1")) {
 
             System.out.println("Er is een skill unlocked");

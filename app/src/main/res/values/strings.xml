@@ -8,9 +8,10 @@
 
 
     <string name="scanButton">Start Scan</string>
-    <string name="ScoreButton">Score</string>
+    <string name="ScoreButton">ScoreBoard</string>
     <string name="battleButton">Battle</string>
     <string name="title_activity_scan">ScanActivity</string>
+    <string name="SkillsButton">Vaardigheden</string>
 
     <string name="hello_world">Hello world!</string>
 </resources>
