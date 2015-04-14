@@ -1,5 +1,7 @@
 package com.lumini.hogeschoolgame.hogeschoolgame;
 
+import android.bluetooth.le.ScanResult;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -20,19 +23,33 @@ public class MainActivity extends ActionBarActivity {
 
     //public void onClick(View v) {
 
+
+       // IntentIntegrator integrator = new IntentIntegrator(this);
+       // integrator.initiateScan(this);
         IntentIntegrator.initiateScan(this);
-/*
-        IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
-        integrator.addExtra("SCAN_WIDTH", 640);
-        integrator.addExtra("SCAN_HEIGHT", 480);
-        integrator.addExtra("SCAN_MODE", "QR_CODE_MODE,PRODUCT_MODE");
-        //customize the prompt message before scanning
-        integrator.addExtra("PROMPT_MESSAGE", "Scanner Start!");
-        integrator.initiateScan(IntentIntegrator.PRODUCT_CODE_TYPES);
-    */
+
+
     }
 
 
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent ) {
+        IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if (scanResult != null) {
+            // handle scan result
+            System.out.println("Er is geen resultaat gevonden");
+            System.out.println(scanResult.toString());
+        }
+        String Result = scanResult.getContents();
+        
+        if (Result.equals("1")) {
+
+            System.out.println("Er is een skill unlocked");
+        }
+
+        // else continue with any other code you need in the method
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

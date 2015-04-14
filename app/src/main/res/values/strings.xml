@@ -10,4 +10,7 @@
     <string name="scanButton">Start Scan</string>
     <string name="ScoreButton">Score</string>
     <string name="battleButton">Battle</string>
+    <string name="title_activity_scan">ScanActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
