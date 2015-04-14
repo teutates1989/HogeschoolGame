@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.google.zxing.integration.android.IntentIntegrator;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -13,6 +16,22 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    public void ScanNow(View v){
+
+    //public void onClick(View v) {
+
+        IntentIntegrator.initiateScan(this);
+/*
+        IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
+        integrator.addExtra("SCAN_WIDTH", 640);
+        integrator.addExtra("SCAN_HEIGHT", 480);
+        integrator.addExtra("SCAN_MODE", "QR_CODE_MODE,PRODUCT_MODE");
+        //customize the prompt message before scanning
+        integrator.addExtra("PROMPT_MESSAGE", "Scanner Start!");
+        integrator.initiateScan(IntentIntegrator.PRODUCT_CODE_TYPES);
+    */
+    }
+
 
 
     @Override
