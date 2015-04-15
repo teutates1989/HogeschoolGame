@@ -24,6 +24,10 @@
             android:name=".ScanActivity"
             android:label="@string/title_activity_scan" >
         </activity>
+        <activity
+            android:name=".ListActivity"
+            android:label="listactivity"
+            ></activity>
     </application>
 
 </manifest>

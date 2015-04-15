@@ -30,6 +30,14 @@ public class MainActivity extends ActionBarActivity {
 
 
     }
+    public void Skills(View v){
+
+        Intent myIntent = new Intent(v.getContext(),ListActivity.class);
+        v.getContext().startActivity(myIntent);
+
+
+    }
+
 
 
 
