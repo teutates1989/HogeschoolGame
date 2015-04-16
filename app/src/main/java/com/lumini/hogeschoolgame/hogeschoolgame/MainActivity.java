@@ -1,7 +1,8 @@
 package com.lumini.hogeschoolgame.hogeschoolgame;
 
-import android.bluetooth.le.ScanResult;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +11,8 @@ import android.view.View;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.util.UUID;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -32,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
     }
     public void Skills(View v){
 
-        Intent myIntent = new Intent(v.getContext(),ListActivity.class);
+        Intent myIntent = new Intent(v.getContext(),ListSkillActivity.class);
         v.getContext().startActivity(myIntent);
 
 
@@ -56,6 +59,26 @@ public class MainActivity extends ActionBarActivity {
         }
 
         // else continue with any other code you need in the method
+
+    }
+
+    private static String uniqueID = null;
+    private static final String PREF_UNIQUE_ID = "PREF_UNIQUE_ID";
+
+    public synchronized static String id(Context context) {
+        if (uniqueID == null) {
+            SharedPreferences sharedPrefs = context.getSharedPreferences(
+                    PREF_UNIQUE_ID, Context.MODE_PRIVATE);
+            uniqueID = sharedPrefs.getString(PREF_UNIQUE_ID, null);
+            if (uniqueID == null) {
+                uniqueID = UUID.randomUUID().toString();
+                SharedPreferences.Editor editor = sharedPrefs.edit();
+                editor.putString(PREF_UNIQUE_ID, uniqueID);
+                editor.commit();
+            }
+        }
+        System.out.println(uniqueID);
+        return uniqueID;
 
     }
 
