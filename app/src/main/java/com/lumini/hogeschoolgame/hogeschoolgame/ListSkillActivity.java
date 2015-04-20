@@ -12,6 +12,9 @@ import android.view.View;
 
 public class ListSkillActivity extends ListActivity {
 
+    //GameManager instance = GameManager.getInstance();
+    Manager instance = Manager.getInstance();
+
     static final String[] Skills_sk =
             new String[] { "Communicatie", "Programmeren", "Accesability", "teamwork"};
 
@@ -19,7 +22,7 @@ public class ListSkillActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setListAdapter(new MobileArrayAdapter(this, Skills_sk));
+        setListAdapter(new MobileArrayAdapter(this, instance.getTotalSkills()));
 
     }
 
