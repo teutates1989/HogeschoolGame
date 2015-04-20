@@ -16,7 +16,7 @@ import java.util.UUID;
 
 
 public class MainActivity extends ActionBarActivity {
-
+    Manager instance = Manager.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +55,9 @@ public class MainActivity extends ActionBarActivity {
 
         if (Result.equals("1")) {
 
+            instance.setCollection(instance.getASkill(0));
             System.out.println("Er is een skill unlocked");
+            System.out.println(instance.getASkill(0));
         }
 
         // else continue with any other code you need in the method
