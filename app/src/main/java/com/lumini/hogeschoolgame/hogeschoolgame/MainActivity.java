@@ -1,6 +1,8 @@
 package com.lumini.hogeschoolgame.hogeschoolgame;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
@@ -48,19 +50,45 @@ public class MainActivity extends ActionBarActivity {
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
         if (scanResult != null) {
             // handle scan result
-            System.out.println("Er is geen resultaat gevonden");
+
             System.out.println(scanResult.toString());
         }
         String Result = scanResult.getContents();
 
-        if (Result.equals("1")) {
+        final int size = instance.getTotalSkills().length;
+        for (int i = -1; i < size; i++)
+       {
+           String Test = String.valueOf(i);
+           if (Result.equals(Test)) {
 
-            instance.setCollection(instance.getASkill(0));
-            System.out.println("Er is een skill unlocked");
-            System.out.println(instance.getASkill(0));
-        }
+                instance.setCollection(instance.getASkill(i));
+                //do something with i
+                System.out.println("Er is een skill unlocked");
+                System.out.println(instance.getASkill(0));
 
-        // else continue with any other code you need in the method
+
+               new AlertDialog.Builder(this)
+                       .setTitle("Nieuwe Skill Toegevoegd")
+                       .setMessage(instance.getASkill(Integer.parseInt(Test)) )
+               .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int which) {
+                       // continue with delete
+                   }
+               })
+                /*.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })*/
+                       .setIcon(android.R.drawable.ic_dialog_alert)
+                       .show();
+
+
+
+
+
+            }
+       }
 
     }
 

@@ -18,15 +18,19 @@ package com.lumini.hogeschoolgame.hogeschoolgame;
         import android.widget.Toast;
         import android.widget.AdapterView.OnItemClickListener;
 
+        import java.util.ArrayList;
 
-    public class MobileArrayAdapter extends ArrayAdapter<String> {
+
+public class MobileArrayAdapter extends ArrayAdapter<String> {
         private final Context context;
         private final String[] values;
 
-        public MobileArrayAdapter(Context context, String[] values) {
+        public MobileArrayAdapter(Context context, ArrayList<String> values) {
             super(context, R.layout.list_mobile, values);
             this.context = context;
-            this.values = values;
+
+
+            this.values = values.toArray(new String[values.size()]);
         }
 
         @Override

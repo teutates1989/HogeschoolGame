@@ -15,14 +15,12 @@ public class ListSkillActivity extends ListActivity {
     //GameManager instance = GameManager.getInstance();
     Manager instance = Manager.getInstance();
 
-    static final String[] Skills_sk =
-            new String[] { "Communicatie", "Programmeren", "Accesability", "teamwork"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setListAdapter(new MobileArrayAdapter(this, instance.getTotalSkills()));
+        setListAdapter(new MobileArrayAdapter(this, instance.getcollection()  ));
 
     }
 
