@@ -13,6 +13,7 @@
     <string name="DebugButton">Clear List</string>
     <string name="title_activity_scan">ScanActivity</string>
     <string name="SkillsButton">Vaardigheden</string>
+    <string name="ScoreOphalen">Score Ophalen</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="title_skills_list">Skills</string>

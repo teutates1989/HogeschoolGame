@@ -64,6 +64,11 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    public void Score(View v){
+        Intent myIntent = new Intent(v.getContext(),ScoreListActivity.class);
+        System.out.println("ik druk op score maar doe niks");
+        v.getContext().startActivity(myIntent);
+    }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent ) {
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
