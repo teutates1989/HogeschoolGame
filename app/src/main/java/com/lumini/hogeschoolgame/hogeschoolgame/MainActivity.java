@@ -83,7 +83,8 @@ public class MainActivity extends ActionBarActivity {
                 instance.setCollection(instance.getASkill(i));
                 //do something with i
                 System.out.println("Er is een skill unlocked");
-                System.out.println(instance.getASkill(0));
+               System.out.println(i);
+                System.out.println(instance.getASkill(Integer.parseInt(Test)));
 
 
                new AlertDialog.Builder(this)
