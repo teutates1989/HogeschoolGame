@@ -9,7 +9,8 @@
 
     <string name="scanButton">Start Scan</string>
     <string name="ScoreButton">ScoreBoard</string>
-    <string name="battleButton">Battle</string>
+    <string name="battleButton">Battle WIP</string>
+    <string name="DebugButton">Clear List</string>
     <string name="title_activity_scan">ScanActivity</string>
     <string name="SkillsButton">Vaardigheden</string>
 

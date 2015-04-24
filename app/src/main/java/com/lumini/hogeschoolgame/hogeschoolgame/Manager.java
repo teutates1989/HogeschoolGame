@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Manager {
 
     private static Manager INSTANCE;
-    static final String[] Skills_sk = new String[]{"Communicatie", "Programmeren", "Accesability", "teamwork"};
+    static final String[] Skills_sk = new String[]{"Communicatie", "Programmeren", "Accesability","Teamwork","Problemen oplossen","Rapporteren","Engels","Portfolio","Creativiteit","Analyzeren","Mobile development"};
 
     // static final String[] Skills_collection = new String[] { };
     private ArrayList<String> Skills_collection = new ArrayList<String>();
@@ -44,6 +44,11 @@ public class Manager {
 
     }
 
+   public void ClearCollection(){
+
+
+       Skills_collection.clear();
+   }
 
 
 }

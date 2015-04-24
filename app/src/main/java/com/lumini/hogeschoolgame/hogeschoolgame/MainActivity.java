@@ -43,7 +43,26 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    public void DebugClear(View v){
 
+        instance.ClearCollection();
+        new AlertDialog.Builder(this)
+                .setTitle("Cleared")
+                .setMessage("List is cleared")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+                /*.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })*/
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+
+    }
 
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent ) {
